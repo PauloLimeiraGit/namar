@@ -1102,23 +1102,14 @@ svg {
     display: none;
   }
 }
-@media (max-width: 560px) {
-  /* o WhatsApp do cabeçalho passa para dentro do menu */
-  .header-wa {
+@media (max-width: 820px) {
+  /* no celular e no tablet, WhatsApp e "Solicitar avaliação" ficam só
+     dentro do menu: o topo mostra apenas a logo e o botão do menu */
+  .header-in .header-wa,
+  .header-in .btn-sm {
     display: none;
   }
-  .header-in .btn-sm {
+  .menu-btn {
     margin-left: auto;
-  }
-}
-@media (max-width: 380px) {
-  .brand img {
-    width: 124px;
-    height: auto;
-  }
-  .header-in .btn-sm {
-    white-space: nowrap;
-    padding-inline: 14px;
-    font-size: 13px;
   }
 }
