@@ -155,3 +155,25 @@ if (matchMedia("(hover: none)").matches) {
     }),
   );
 }
+
+// menu hambúrguer: abre e fecha o painel; fecha ao escolher uma seção,
+// ao tocar fora, com a tecla Esc ou ao voltar para a tela larga
+const menuBtn = document.querySelector(".menu-btn");
+const menuPanel = document.getElementById("menu-mobile");
+const setMenu = (open) => {
+  document.documentElement.classList.toggle("menu-open", open);
+  menuBtn.setAttribute("aria-expanded", String(open));
+  menuBtn.setAttribute("aria-label", open ? "Fechar menu" : "Abrir menu");
+  menuPanel.setAttribute("aria-hidden", String(!open));
+};
+menuBtn.addEventListener("click", () =>
+  setMenu(!document.documentElement.classList.contains("menu-open")),
+);
+menuPanel.addEventListener("click", (e) => {
+  if (e.target.closest("a")) setMenu(false);
+});
+document.addEventListener("click", (e) => {
+  if (!e.target.closest(".header")) setMenu(false);
+});
+addEventListener("keydown", (e) => e.key === "Escape" && setMenu(false));
+matchMedia("(min-width: 821px)").addEventListener("change", (e) => e.matches && setMenu(false));
