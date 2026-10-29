@@ -414,53 +414,30 @@ svg {
 }
 /* estado ativo */
 .service:hover,
-.service:focus-visible {
+.service:focus-visible,
+.service.open {
   background: var(--surface);
   box-shadow:
     0 0 0 1px var(--line),
     0 22px 44px -28px rgba(22, 24, 27, 0.3);
 }
 .service:hover .icon,
-.service:focus-visible .icon {
+.service:focus-visible .icon,
+.service.open .icon {
   transform: translateY(-30px) translateZ(-140px) rotateX(70deg);
   opacity: 0;
 }
 .service:hover .svc-text,
-.service:focus-visible .svc-text {
+.service:focus-visible .svc-text,
+.service.open .svc-text {
   transform: translateY(-104px);
 }
 .service:hover p,
-.service:focus-visible p {
+.service:focus-visible p,
+.service.open p {
   opacity: 1;
   transform: none;
   transition-delay: 0.08s;
-}
-/* telas de toque (sem "passar o mouse"): tudo visível, ícone menor */
-@media (hover: none) {
-  .service {
-    min-height: 0;
-    text-align: left;
-  }
-  .service .icon,
-  .service .svc-text,
-  .service p {
-    position: static;
-    opacity: 1;
-    transform: none;
-  }
-  .service .icon {
-    width: 48px;
-    height: 48px;
-    margin: 0 0 18px;
-    border-radius: 14px;
-  }
-  .service .icon svg {
-    width: 24px;
-    height: 24px;
-  }
-  .service p {
-    margin-top: 8px;
-  }
 }
 
 /* como trabalhamos */
@@ -751,7 +728,6 @@ svg {
   }
 }
 @media (max-width: 560px) {
-  .services,
   .steps,
   .pillars,
   .form {
@@ -926,5 +902,61 @@ svg {
     order: 4;
     align-self: start;
     margin-top: -20px;
+  }
+}
+
+/* serviços no celular: o mesmo visual do computador, em duas colunas.
+   Tocar no card mostra a descrição; tocar de novo volta ao ícone. */
+@media (max-width: 560px) {
+  .services {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .service {
+    min-height: 220px;
+    padding: 20px 14px;
+    cursor: pointer;
+  }
+  .service .icon {
+    top: 30px;
+    width: 70px;
+    height: 70px;
+    margin-left: -35px;
+    border-radius: 20px;
+  }
+  .service .icon svg {
+    width: 34px;
+    height: 34px;
+  }
+  .service .svc-text {
+    left: 14px;
+    right: 14px;
+    top: 120px;
+  }
+  .service h3 {
+    font-size: 15px;
+  }
+  .service p {
+    margin-top: 8px;
+    font-size: 13px;
+    line-height: 1.45;
+  }
+  .service:hover .svc-text,
+  .service:focus-visible .svc-text,
+  .service.open .svc-text {
+    transform: translateY(-96px);
+  }
+}
+
+/* aviso discreto, só em telas de toque */
+.svc-hint {
+  display: none;
+  margin-top: 12px;
+  font-size: 14px;
+  color: var(--muted);
+}
+@media (hover: none) {
+  .svc-hint {
+    display: block;
   }
 }

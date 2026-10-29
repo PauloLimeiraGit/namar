@@ -142,3 +142,16 @@ const markActive = () => {
 };
 addEventListener("scroll", markActive, { passive: true });
 markActive();
+
+// serviços em telas de toque: tocar no card mostra a descrição (mesmo efeito
+// do "passar o mouse" no computador); tocar de novo ou em outro card fecha
+if (matchMedia("(hover: none)").matches) {
+  const cards = [...document.querySelectorAll(".service")];
+  cards.forEach((card) =>
+    card.addEventListener("click", () => {
+      const open = !card.classList.contains("open");
+      cards.forEach((c) => c.classList.remove("open"));
+      card.classList.toggle("open", open);
+    }),
+  );
+}
