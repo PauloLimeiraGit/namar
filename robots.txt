@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# TROCAR: domínio definitivo
+Sitemap: https://www.namarfiresystems.com.br/sitemap.xml
