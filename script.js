@@ -177,3 +177,42 @@ document.addEventListener("click", (e) => {
 });
 addEventListener("keydown", (e) => e.key === "Escape" && setMenu(false));
 matchMedia("(min-width: 821px)").addEventListener("change", (e) => e.matches && setMenu(false));
+
+// serviços: todos os cards com a mesma altura, suficiente para o texto mais
+// longo; ao abrir, o nome e a descrição sobem até ficar centralizados
+const svcCards = [...document.querySelectorAll(".service")];
+const fitServices = () => {
+  svcCards.forEach((c) => {
+    c.style.minHeight = "";
+    c.style.removeProperty("--shift");
+  });
+  const pad = parseFloat(getComputedStyle(svcCards[0]).paddingTop);
+  const need = Math.max(...svcCards.map((c) => c.querySelector(".svc-text").offsetHeight + pad * 2));
+  const base = svcCards[0].offsetHeight;
+  if (need > base) svcCards.forEach((c) => (c.style.minHeight = `${Math.ceil(need)}px`));
+  // em repouso, ícone e nome ficam centralizados na altura do card
+  const icon = svcCards[0].querySelector(".icon");
+  const h3max = Math.max(...svcCards.map((c) => c.querySelector("h3").offsetHeight));
+  const textTop = svcCards[0].querySelector(".svc-text").offsetTop;
+  const block = textTop + h3max - icon.offsetTop;
+  const shift = Math.max(0, (svcCards[0].offsetHeight - block) / 2 - icon.offsetTop);
+  svcCards.forEach((c) => c.style.setProperty("--shift", `${Math.round(shift)}px`));
+  svcCards.forEach((c) => {
+    const t = c.querySelector(".svc-text");
+    const target = Math.max(pad, (c.offsetHeight - t.offsetHeight) / 2);
+    c.style.setProperty("--lift", `${Math.round(target - t.offsetTop)}px`);
+  });
+};
+fitServices();
+addEventListener("resize", fitServices);
+document.fonts?.ready.then(fitServices);
+
+// topo fixo: fica parado logo abaixo do cabeçalho; se for mais alto que a
+// tela, primeiro rola até o fim (botões à vista) e então fica parado
+const hero = document.querySelector(".hero");
+const fitHero = () => {
+  const top = Math.min(72, innerHeight - hero.offsetHeight);
+  hero.style.top = `${top}px`;
+};
+fitHero();
+addEventListener("resize", fitHero);
