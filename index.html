@@ -136,7 +136,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=20261029" />
+    <link rel="stylesheet" href="styles.css?v=20261030b" />
   </head>
   <body>
     <!-- =====================================================
@@ -218,25 +218,35 @@
            1. TOPO — promessa, credencial e ação principal
            ===================================================== -->
       <section class="hero">
+        <!-- foto em toda a largura (limitada a 1920 px) -->
+        <picture class="hero-bg">
+          <source srcset="assets/hero.webp" type="image/webp" />
+          <img
+            src="assets/hero.jpg"
+            alt="Técnico da NAMAR inspecionando o manômetro de um extintor de incêndio"
+            width="1672"
+            height="941"
+            fetchpriority="high"
+          />
+        </picture>
         <div class="wrap hero-in">
           <div class="hero-text reveal">
             <p class="eyebrow">
               Proteção contra incêndio e pânico · Rio de Janeiro
             </p>
             <h1>
-              Segurança contra incêndio com projeto, execução e
-              <span class="accent">conformidade</span>.
+              Proteção contra incêndio e <span class="accent">explosão</span>.
             </h1>
             <p class="lead">
-              Projetos executivos, equipamentos, montagem e manutenção de
-              sistemas de proteção contra incêndio e pânico — do diagnóstico à
-              legalização junto ao Corpo de Bombeiros.
+              A NAMAR Fire Systems oferece soluções em projetos, instalações,
+              manutenção e regularização de sistemas de prevenção e combate a
+              incêndio. Atendemos condomínios, empresas, estabelecimentos
+              comerciais e indústrias, com soluções personalizadas para cada
+              necessidade.
             </p>
             <div class="actions">
-              <a class="btn" href="#contato" data-whatsapp
-                >Falar com um especialista</a
-              >
-              <a class="btn btn-ghost" href="#servicos">Conhecer os serviços</a>
+              <a class="btn" href="#contato">Solicitar orçamento</a>
+              <a class="btn btn-ghost" href="#servicos">Conheça nossas soluções</a>
             </div>
             <p class="seal">
               <span class="seal-icon" aria-hidden="true">
@@ -253,18 +263,6 @@
               </span>
             </p>
           </div>
-          <figure class="hero-media reveal">
-            <picture>
-              <source srcset="assets/hero.webp" type="image/webp" />
-              <img
-                src="assets/hero.jpg"
-                alt="Técnico da NAMAR inspecionando o manômetro de um extintor de incêndio"
-                width="1672"
-                height="941"
-                fetchpriority="high"
-              />
-            </picture>
-          </figure>
         </div>
       </section>
 
@@ -286,30 +284,33 @@
         <div class="wrap about">
           <div class="reveal">
             <p class="eyebrow">A empresa</p>
-            <h2>Engenharia aplicada à proteção de pessoas e patrimônios.</h2>
+            <h2>
+              Conhecimento técnico, responsabilidade e compromisso com cada
+              projeto.
+            </h2>
           </div>
           <div class="reveal">
-            <!-- TROCAR: história da empresa (tempo de atuação, origem, responsável técnico) -->
             <p class="body">
-              A NAMAR Fire Systems desenvolve e mantém sistemas de proteção
-              contra incêndio e pânico com rigor técnico e atenção a cada
-              detalhe. Cuidamos de todo o processo — do projeto à aprovação —
-              para que a sua edificação esteja segura e em conformidade.
+              A NAMAR Fire Systems nasceu com o propósito de oferecer soluções
+              completas e eficientes em segurança contra incêndio. Trabalhamos
+              com atendimento personalizado, planejamento técnico e atenção aos
+              detalhes, buscando estabelecer relações de confiança e parcerias
+              duradouras com nossos clientes.
             </p>
           </div>
         </div>
-        <div class="wrap pillars">
+        <div class="wrap pillars pillars-2">
           <article class="pillar reveal">
             <span class="icon" aria-hidden="true">
               <svg viewBox="0 0 24 24">
-                <circle cx="12" cy="12" r="8.5" />
-                <path d="M12 7.5V12l3 2" />
+                <circle cx="12" cy="8" r="3.5" />
+                <path d="M5 20c.8-3.6 3.6-5.5 7-5.5s6.2 1.9 7 5.5" />
               </svg>
             </span>
-            <h3>Atendimento ágil</h3>
+            <h3>Atendimento personalizado</h3>
             <p>
-              Equipe preparada para emergências e manutenções, com resposta
-              rápida e segura.
+              Entendemos as particularidades de cada edificação para oferecer
+              soluções adequadas às necessidades de cada cliente.
             </p>
           </article>
           <article class="pillar reveal">
@@ -324,17 +325,7 @@
             <h3>Empresa certificada</h3>
             <p>
               Certificação junto ao Corpo de Bombeiros Militar do Estado do Rio
-              de Janeiro.
-            </p>
-          </article>
-          <article class="pillar reveal">
-            <span class="icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M4 12.5 9 17.5 20 6.5" /></svg>
-            </span>
-            <h3>Prevenção e confiabilidade</h3>
-            <p>
-              Manutenção preventiva que mantém os sistemas sempre em condição de
-              operação.
+              de Janeiro. Transparência e compromisso.
             </p>
           </article>
         </div>
@@ -345,117 +336,85 @@
            ===================================================== -->
       <section class="section section-alt" id="servicos">
         <div class="wrap">
-          <div class="section-head reveal">
-            <p class="eyebrow">Serviços</p>
-            <h2>
-              Soluções completas em proteção contra incêndio, do projeto à
-              manutenção.
-            </h2>
-            <p class="svc-hint">Toque em um serviço para ver os detalhes.</p>
-          </div>
           <div class="services">
+            <!-- apresentação ocupa as duas primeiras casas da grade -->
+            <div class="svc-intro reveal">
+              <p class="eyebrow">Serviços</p>
+              <h2>Soluções completas para cada necessidade.</h2>
+              <p class="body">
+                Da elaboração de projetos à manutenção dos sistemas, oferecemos
+                serviços especializados para diferentes tipos de edificações.
+              </p>
+              <p class="svc-hint">Toque em um serviço para ver os detalhes.</p>
+            </div>
             <article class="service reveal" tabindex="0">
-              <span class="icon" aria-hidden="true"
-                ><svg viewBox="0 0 24 24">
-                  <path d="M7 3h7l4 4v14H7z" />
-                  <path d="M14 3v4h4" />
-                  <path d="m9.5 14 2 2 3.5-4" /></svg
-              ></span>
+              <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7z" /><path d="M14 3v4h4" /><path d="m9.5 14 2 2 3.5-4" /></svg></span>
               <div class="svc-text">
-                <h3>Legalização junto ao CBMERJ</h3>
-                <p>
-                  Acompanhamento técnico de todas as etapas até o Certificado de
-                  Aprovação dos Bombeiros.
-                </p>
+                <h3>Projetos e regularização junto ao CBMERJ</h3>
+                <p>Elaboração de projetos de segurança contra incêndio e pânico, acompanhamento de processos e suporte técnico para regularização de edificações.</p>
               </div>
             </article>
             <article class="service reveal" tabindex="0">
-              <span class="icon" aria-hidden="true"
-                ><svg viewBox="0 0 24 24">
-                  <path d="M4 20V8l8-5 8 5v12" />
-                  <path d="M9 20v-6h6v6" /></svg
-              ></span>
+              <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 20h16" /><path d="M8 20v-9h8v9" /><path d="M6 11h12" /><path d="M12 11V6" /><path d="M9 6h6" /><circle cx="12" cy="15.5" r="1.6" /></svg></span>
               <div class="svc-text">
-                <h3>Projeto de incêndio (PPCI)</h3>
-                <p>
-                  Projetos de prevenção e combate a incêndio conforme as normas
-                  vigentes.
-                </p>
+                <h3>Sistemas de hidrantes e sprinklers</h3>
+                <p>Instalação, adequação e manutenção de redes de combate a incêndio, incluindo tubulações, hidrantes e chuveiros automáticos.</p>
               </div>
             </article>
             <article class="service reveal" tabindex="0">
-              <span class="icon" aria-hidden="true"
-                ><svg viewBox="0 0 24 24">
-                  <rect x="6" y="8" width="12" height="11" rx="2" />
-                  <circle cx="12" cy="13.5" r="2.5" />
-                  <path
-                    d="M9 5.5c1.8-1.3 4.2-1.3 6 0M7 3.5c2.9-2 7.1-2 10 0"
-                  /></svg
-              ></span>
+              <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="6" y="8" width="12" height="11" rx="2" /><circle cx="12" cy="13.5" r="2.5" /><path d="M9 5.5c1.8-1.3 4.2-1.3 6 0M7 3.5c2.9-2 7.1-2 10 0" /></svg></span>
               <div class="svc-text">
-                <h3>Alarme e detecção de incêndio</h3>
-                <p>Identificação precoce de riscos, com alerta imediato.</p>
+                <h3>Detecção e alarme de incêndio</h3>
+                <p>Instalação e manutenção de centrais, detectores, acionadores manuais e dispositivos de sinalização de alarme.</p>
               </div>
             </article>
             <article class="service reveal" tabindex="0">
-              <span class="icon" aria-hidden="true"
-                ><svg viewBox="0 0 24 24">
-                  <rect x="3" y="8" width="13" height="9" rx="1.5" />
-                  <path d="M16 11h3l2 2v2h-5M7 8V5h5v3" /></svg
-              ></span>
+              <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="6" y="3" width="12" height="18" rx="1.5" /><path d="M9 12h4" /><path d="M6 21h12" /></svg></span>
+              <div class="svc-text">
+                <h3>Portas corta-fogo</h3>
+                <p>Fornecimento, instalação e manutenção de portas corta-fogo, fechaduras, dobradiças e barras antipânico.</p>
+              </div>
+            </article>
+            <article class="service reveal" tabindex="0">
+              <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="8" width="13" height="9" rx="1.5" /><path d="M16 11h3l2 2v2h-5M7 8V5h5v3" /></svg></span>
               <div class="svc-text">
                 <h3>Casa de Máquinas de Incêndio</h3>
-                <p>Instalação e manutenção de bombas e quadros de comando.</p>
+                <p>Instalação, inspeção e manutenção de motobombas, painéis de comando e sistemas de combate a incêndio, garantindo segurança e pleno funcionamento.</p>
               </div>
             </article>
             <article class="service reveal" tabindex="0">
-              <span class="icon" aria-hidden="true"
-                ><svg viewBox="0 0 24 24">
-                  <circle cx="12" cy="12" r="8" />
-                  <circle cx="12" cy="12" r="4.5" />
-                  <circle cx="12" cy="12" r="1.2" /></svg
-              ></span>
+              <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="8" y="7" width="8" height="14" rx="3" /><path d="M10 7V4h4v3M14 4h3l2 2" /></svg></span>
+              <div class="svc-text">
+                <h3>Extintores de incêndio</h3>
+                <p>Fornecimento, inspeção, manutenção e recarga de extintores, conforme as características e necessidades de cada edificação.</p>
+              </div>
+            </article>
+            <article class="service reveal" tabindex="0">
+              <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" /><circle cx="12" cy="12" r="4.5" /><circle cx="12" cy="12" r="1.2" /></svg></span>
               <div class="svc-text">
                 <h3>Mangueiras de incêndio</h3>
-                <p>Inspeção, testes e manutenção para uso seguro.</p>
+                <p>Inspeção, ensaios e manutenção de mangueiras, visando à conservação e à confiabilidade dos equipamentos.</p>
               </div>
             </article>
             <article class="service reveal" tabindex="0">
-              <span class="icon" aria-hidden="true"
-                ><svg viewBox="0 0 24 24">
-                  <rect x="8" y="7" width="8" height="14" rx="3" />
-                  <path d="M10 7V4h4v3M14 4h3l2 2" /></svg
-              ></span>
+              <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13 2 5 13h6l-1 9 8-11h-6l1-9Z" /></svg></span>
               <div class="svc-text">
-                <h3>Venda e recarga de extintores</h3>
-                <p>
-                  Equipamentos adequados a cada risco, com recarga e inspeção.
-                </p>
+                <h3>SPDA — Proteção contra descargas atmosféricas</h3>
+                <p>Projetos, instalação, inspeções e manutenção de sistemas de proteção contra descargas atmosféricas.</p>
               </div>
             </article>
             <article class="service reveal" tabindex="0">
-              <span class="icon" aria-hidden="true"
-                ><svg viewBox="0 0 24 24">
-                  <path d="M13 2 5 13h6l-1 9 8-11h-6l1-9Z" /></svg
-              ></span>
+              <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="10" rx="2" /><path d="M7 12h6" /><path d="m11 10 2 2-2 2" /><path d="M16 10.5v3" /></svg></span>
               <div class="svc-text">
-                <h3>SPDA (para-raios)</h3>
-                <p>
-                  Sistema de proteção contra descargas atmosféricas, com projeto
-                  e laudo.
-                </p>
+                <h3>Sinalização e iluminação de emergência</h3>
+                <p>Fornecimento, instalação e adequação de sistemas de sinalização de segurança e iluminação de emergência.</p>
               </div>
             </article>
             <article class="service reveal" tabindex="0">
-              <span class="icon" aria-hidden="true"
-                ><svg viewBox="0 0 24 24">
-                  <path
-                    d="M14.5 6.5a3.5 3.5 0 0 0-4.6 4.6L4 17l3 3 5.9-5.9a3.5 3.5 0 0 0 4.6-4.6l-2.2 2.2-2.4-.6-.6-2.4 2.2-2.2Z"
-                  /></svg
-              ></span>
+              <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14.5 6.5a3.5 3.5 0 0 0-4.6 4.6L4 17l3 3 5.9-5.9a3.5 3.5 0 0 0 4.6-4.6l-2.2 2.2-2.4-.6-.6-2.4 2.2-2.2Z" /></svg></span>
               <div class="svc-text">
                 <h3>Manutenção preventiva e corretiva</h3>
-                <p>Sistemas revisados periodicamente e prontos para operar.</p>
+                <p>Serviços de inspeção, avaliação e manutenção dos sistemas de segurança contra incêndio, conforme as necessidades de cada edificação.</p>
               </div>
             </article>
           </div>
@@ -469,35 +428,43 @@
         <div class="wrap">
           <div class="section-head reveal">
             <p class="eyebrow">Como trabalhamos</p>
-            <h2>Um processo claro, do primeiro contato à aprovação.</h2>
+            <h2>
+              Da primeira conversa à entrega, um processo organizado e
+              transparente.
+            </h2>
           </div>
           <ol class="steps">
             <li class="reveal">
               <span class="num">01</span>
-              <h3>Diagnóstico</h3>
+              <h3>Avaliação técnica</h3>
               <p>
-                Vistoria técnica para entender a edificação e as exigências
-                aplicáveis.
+                Identificamos as necessidades da edificação e analisamos as
+                condições dos sistemas existentes.
               </p>
             </li>
             <li class="reveal">
               <span class="num">02</span>
-              <h3>Projeto</h3>
+              <h3>Planejamento e proposta</h3>
               <p>
-                Solução dimensionada para o seu caso, com proposta detalhada.
+                Apresentamos as soluções recomendadas, com escopo definido e
+                informações claras sobre a execução.
               </p>
             </li>
             <li class="reveal">
               <span class="num">03</span>
-              <h3>Execução</h3>
+              <h3>Execução dos serviços</h3>
               <p>
-                Montagem e instalação dos sistemas por equipe especializada.
+                Realizamos os serviços contratados com equipe especializada,
+                seguindo os requisitos técnicos e as normas vigentes.
               </p>
             </li>
             <li class="reveal">
               <span class="num">04</span>
-              <h3>Legalização</h3>
-              <p>Acompanhamento junto ao CBMERJ e manutenção contínua.</p>
+              <h3>Entrega e acompanhamento</h3>
+              <p>
+                Concluímos os serviços com as verificações pertinentes e
+                orientações sobre manutenção.
+              </p>
             </li>
           </ol>
         </div>
@@ -524,11 +491,27 @@
             </h2>
             <p class="cert-num">Certificado nº E27-24061/11219/2026</p>
           </div>
-          <!-- TROCAR: números reais da empresa (não publicar valores estimados) -->
-          <div class="stats reveal">
-            <div><b data-count>00</b><span>anos de atuação</span></div>
-            <div><b data-count>00</b><span>projetos aprovados</span></div>
-            <div><b data-count>00</b><span>clientes atendidos</span></div>
+          <!-- logos das entidades (arquivos originais em assets/: logo-crearj.png e logobombeiros.png) -->
+          <div class="cert-logos reveal">
+            <figure class="cert-logo">
+              <img
+                src="assets/logo-crearj-site.png"
+                alt="CREA-RJ — Conselho Regional de Engenharia e Agronomia do Rio de Janeiro"
+                width="549"
+                height="160"
+                loading="lazy"
+              />
+            </figure>
+            <figure class="cert-logo">
+              <img
+                src="assets/logobombeiros-site.png"
+                alt="Corpo de Bombeiros Militar do Estado do Rio de Janeiro"
+                width="253"
+                height="253"
+                loading="lazy"
+                class="logo-round"
+              />
+            </figure>
           </div>
         </div>
       </section>
@@ -663,6 +646,6 @@
       </svg>
     </a>
 
-    <script src="script.js?v=20261029"></script>
+    <script src="script.js?v=20261030b"></script>
   </body>
 </html>

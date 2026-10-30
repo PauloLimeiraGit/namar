@@ -1113,3 +1113,270 @@ svg {
     margin-left: auto;
   }
 }
+
+/* =========================================================
+   TOPO EM TELA CHEIA
+   A foto ocupa toda a largura, limitada a 1920 px (Full HD, a
+   resolução de computador mais usada). Uma sombra escura parte da
+   esquerda, sobre o uniforme do técnico, e mantém o texto legível
+   sem apagar o extintor vermelho à direita.
+   ========================================================= */
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  max-width: 1920px;
+  min-height: clamp(580px, calc(100svh - 72px), 800px);
+  margin-inline: auto;
+  padding: 0;
+  overflow: hidden;
+  isolation: isolate;
+  color: #fff;
+}
+.hero-bg,
+.hero-bg img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.hero-bg {
+  z-index: -2;
+}
+.hero-bg img {
+  object-fit: cover;
+  object-position: 70% 35%;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(14, 15, 17, 0.9) 0%,
+      rgba(14, 15, 17, 0.78) 34%,
+      rgba(14, 15, 17, 0.35) 56%,
+      rgba(14, 15, 17, 0) 72%
+    ),
+    linear-gradient(0deg, rgba(14, 15, 17, 0.35), rgba(14, 15, 17, 0) 40%);
+}
+.hero-in {
+  display: block;
+  padding-block: clamp(64px, 8vw, 104px);
+}
+.hero-text {
+  max-width: 580px;
+}
+.hero .eyebrow,
+.hero .accent {
+  color: #ff6b6f;
+}
+.hero .lead {
+  color: rgba(255, 255, 255, 0.78);
+}
+.hero .btn-ghost {
+  color: #fff;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.35);
+}
+.hero .btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.6);
+}
+.hero .seal {
+  color: rgba(255, 255, 255, 0.62);
+}
+.hero .seal b {
+  color: #fff;
+}
+.hero .seal-icon {
+  background: rgba(255, 107, 111, 0.16);
+  color: #ff6b6f;
+}
+/* acima de 1920 px a foto se dissolve nas bordas, sem corte seco */
+@media (min-width: 1921px) {
+  .hero-bg {
+    -webkit-mask-image: linear-gradient(90deg, #000 88%, transparent);
+    mask-image: linear-gradient(90deg, #000 88%, transparent);
+  }
+}
+/* celular e tablet: foto de ponta a ponta no alto, texto logo abaixo */
+@media (max-width: 820px) {
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    min-height: 0;
+    color: var(--ink);
+  }
+  .hero::before {
+    display: none;
+  }
+  .hero-bg {
+    position: relative;
+    aspect-ratio: 16 / 11;
+    z-index: 0;
+  }
+  .hero-bg img {
+    object-position: 62% 40%;
+  }
+  .hero-in {
+    padding-block: 36px 48px;
+  }
+  .hero .eyebrow,
+  .hero .accent {
+    color: var(--red);
+  }
+  .hero .lead {
+    color: var(--muted);
+  }
+  .hero .btn-ghost {
+    color: var(--ink);
+    box-shadow: inset 0 0 0 1px var(--line);
+  }
+  .hero .seal {
+    color: var(--muted);
+  }
+  .hero .seal b {
+    color: var(--ink);
+  }
+  .hero .seal-icon {
+    background: var(--red-soft);
+    color: var(--red);
+  }
+}
+
+/* A empresa: dois cards */
+.pillars-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+@media (max-width: 560px) {
+  .pillars-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Serviços: a apresentação ocupa as duas primeiras casas da grade,
+   e os dez serviços completam três linhas exatas (2 + 10 = 12) */
+.svc-intro {
+  grid-column: span 2;
+  align-self: center;
+  padding: 8px clamp(0px, 2vw, 28px) 8px 0;
+}
+.svc-intro .body {
+  margin-top: 18px;
+}
+@media (max-width: 1000px) {
+  .svc-intro {
+    padding: 0 0 18px;
+  }
+}
+/* o texto de cada card sobe até ficar centralizado (valor calculado no script.js) */
+.service:hover .svc-text,
+.service:focus-visible .svc-text,
+.service.open .svc-text {
+  transform: translateY(var(--lift, -104px));
+}
+
+/* Certificação: tudo centralizado, logos abaixo do texto */
+.trust {
+  grid-template-columns: 1fr;
+  justify-items: center;
+  text-align: center;
+}
+.trust h2 {
+  max-width: 22em;
+  margin-inline: auto;
+}
+.cert-logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+.cert-logo {
+  display: grid;
+  place-items: center;
+  width: 200px;
+  height: 120px;
+  margin: 0;
+  padding: 20px 26px;
+  border-radius: var(--radius);
+  background: #fff;
+}
+.cert-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+.cert-ph {
+  display: none;
+}
+/* espaço reservado enquanto o PNG não for colocado em assets/ */
+.cert-logo.empty {
+  background: transparent;
+  border: 1px dashed rgba(255, 255, 255, 0.22);
+}
+.cert-logo.empty .cert-ph {
+  display: grid;
+  gap: 4px;
+  font-size: 14px;
+  color: #c9cbcf;
+}
+.cert-ph small {
+  font-size: 11px;
+  color: #7d8087;
+}
+@media (max-width: 560px) {
+  .cert-logo {
+    width: calc(50% - 8px);
+    height: 100px;
+    padding: 16px;
+  }
+}
+.trust {
+  row-gap: clamp(36px, 5vw, 56px);
+}
+.trust .seal-lg {
+  margin-inline: auto;
+}
+.cert-ph {
+  white-space: nowrap;
+}
+
+/* deslocamento calculado no script.js para centralizar o card em repouso */
+.service .icon,
+.service .svc-text {
+  margin-top: var(--shift, 0px);
+}
+
+/* logos da certificação: quadros iguais; o selo redondo fica um pouco mais
+   alto que a logo horizontal para que os dois tenham o mesmo peso visual */
+.cert-logo {
+  width: 260px;
+  height: 128px;
+  padding: 22px 30px;
+}
+.cert-logo img {
+  width: auto;
+  height: 58px;
+}
+.cert-logo img.logo-round {
+  height: 84px;
+}
+@media (max-width: 560px) {
+  .cert-logo {
+    width: calc(50% - 8px);
+    height: 104px;
+    padding: 16px 14px;
+  }
+  .cert-logo img {
+    height: auto;
+    max-height: 44px;
+  }
+  .cert-logo img.logo-round {
+    height: 72px;
+    max-height: none;
+  }
+}
