@@ -37,7 +37,7 @@
     <meta name="twitter:card" content="summary_large_image" />
 
     <!-- dados estruturados: ajudam o Google a entender a empresa e os serviços.
-         TROCAR: telefone, endereço e domínio pelos dados reais antes de publicar -->
+         TROCAR: domínio definitivo antes de publicar -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -47,11 +47,14 @@
         "url": "https://www.namarfiresystems.com.br/",
         "logo": "https://www.namarfiresystems.com.br/assets/logo-namar.png",
         "image": "https://www.namarfiresystems.com.br/assets/og-namar.jpg",
-        "telephone": "+55-21-0000-0000",
-        "email": "contato@namar.com.br",
+        "telephone": "+55-21-97297-6658",
+        "email": "namarfiresystems@gmail.com",
+        "taxID": "64.765.561/0001-64",
+        "sameAs": ["https://www.instagram.com/namarfire/"],
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "Endereço",
+          "streetAddress": "Rua Álvaro de Macedo, 176, Loja A, Parada de Lucas",
+          "postalCode": "21250-620",
           "addressLocality": "Rio de Janeiro",
           "addressRegion": "RJ",
           "addressCountry": "BR"
@@ -136,7 +139,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=20261030d" />
+    <link rel="stylesheet" href="styles.css?v=20261103b" />
   </head>
   <body>
     <!-- =====================================================
@@ -157,12 +160,12 @@
           <a href="#servicos">Serviços</a>
           <a href="#processo">Como trabalhamos</a>
         </nav>
-        <!-- WhatsApp direto. TROCAR: telefone exibido (o link usa o número do script.js) -->
+        <!-- WhatsApp direto (o link usa o número do script.js) -->
         <a
           class="header-wa"
           href="#contato"
           data-whatsapp
-          aria-label="Conversar pelo WhatsApp: (21) 0000-0000"
+          aria-label="Conversar pelo WhatsApp: (21) 97297-6658"
         >
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path
@@ -172,7 +175,7 @@
               d="M9 8.6c.2-.5.5-.5.8-.5h.5c.2 0 .4 0 .5.4l.7 1.6c.1.2 0 .4-.1.6l-.5.6c-.1.1-.2.3 0 .5.6 1 1.4 1.8 2.4 2.3.2.1.4.1.5-.1l.6-.7c.2-.2.4-.2.6-.1l1.5.7c.3.1.4.3.3.6-.1.8-.9 1.5-1.7 1.6-.8.1-1.9-.1-3.5-1.2-1.8-1.3-2.8-3-3-3.6-.2-.7-.1-1.4.4-2.1Z"
             />
           </svg>
-          <span>(21) 0000-0000</span>
+          <span>(21) 97297-6658</span>
         </a>
         <a class="btn btn-sm" href="#contato">Solicitar avaliação</a>
         <!-- menu hambúrguer (celular e tablet) -->
@@ -195,7 +198,6 @@
           <a href="#processo">Como trabalhamos</a>
           <a href="#contato">Contato</a>
           <div class="menu-foot">
-            <!-- TROCAR: telefone exibido -->
             <a class="menu-wa" href="#contato" data-whatsapp>
               <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path
@@ -205,7 +207,7 @@
                   d="M9 8.6c.2-.5.5-.5.8-.5h.5c.2 0 .4 0 .5.4l.7 1.6c.1.2 0 .4-.1.6l-.5.6c-.1.1-.2.3 0 .5.6 1 1.4 1.8 2.4 2.3.2.1.4.1.5-.1l.6-.7c.2-.2.4-.2.6-.1l1.5.7c.3.1.4.3.3.6-.1.8-.9 1.5-1.7 1.6-.8.1-1.9-.1-3.5-1.2-1.8-1.3-2.8-3-3-3.6-.2-.7-.1-1.4.4-2.1Z"
                 />
               </svg>
-              (21) 0000-0000
+              (21) 97297-6658
             </a>
             <a class="btn" href="#contato">Solicitar avaliação</a>
           </div>
@@ -235,7 +237,7 @@
               Proteção contra incêndio e pânico · Rio de Janeiro
             </p>
             <h1>
-              Proteção contra incêndio e <span class="accent">explosão</span>.
+              Proteção contra incêndio com <span class="accent">soluções</span>.
             </h1>
             <p class="lead">
               A NAMAR Fire Systems oferece soluções em projetos, instalações,
@@ -259,7 +261,6 @@
               </span>
               <span>
                 <b>Empresa certificada pelo CBMERJ</b>
-                Certificado nº E27-24061/11219/2026
               </span>
             </p>
           </div>
@@ -489,7 +490,6 @@
               Certificada pelo Corpo de Bombeiros Militar do Estado do Rio de
               Janeiro.
             </h2>
-            <p class="cert-num">Certificado nº E27-24061/11219/2026</p>
           </div>
           <!-- logos das entidades (arquivos originais em assets/: logo-crearj.png e logobombeiros.png) -->
           <div class="cert-logos reveal">
@@ -559,13 +559,15 @@
             <label>
               <span>Serviço</span>
               <select name="servico">
-                <option>Legalização junto ao CBMERJ</option>
-                <option>PPCI</option>
-                <option>Alarme e detecção</option>
+                <option>Projetos e regularização junto ao CBMERJ</option>
+                <option>Sistemas de hidrantes e sprinklers</option>
+                <option>Detecção e alarme de incêndio</option>
+                <option>Portas corta-fogo</option>
                 <option>Casa de Máquinas de Incêndio</option>
+                <option>Extintores de incêndio</option>
                 <option>Mangueiras de incêndio</option>
-                <option>Venda e recarga de extintores</option>
                 <option>SPDA</option>
+                <option>Sinalização e iluminação de emergência</option>
                 <option>Manutenção preventiva e corretiva</option>
                 <option>Outro</option>
               </select>
@@ -600,32 +602,59 @@
           <p>Proteção contra incêndio e pânico.</p>
           <p class="copy">© <span id="ano"></span> NAMAR Fire Systems</p>
         </div>
-        <!-- TROCAR: contatos, endereço e CNPJ reais -->
-        <ul>
-          <li>(21) 0000-0000</li>
-          <li>contato@namar.com.br</li>
-          <li>Endereço · Rio de Janeiro, RJ</li>
-          <li>CNPJ 00.000.000/0000-00</li>
-        </ul>
-        <a
-          class="credit"
-          href="https://www.instagram.com/paulolimeira.dev/"
-          target="_blank"
-          rel="noopener"
-        >
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <rect x="3.5" y="3.5" width="17" height="17" rx="5" />
-            <circle cx="12" cy="12" r="4" />
-            <circle
-              cx="17.2"
-              cy="6.8"
-              r="0.6"
-              fill="currentColor"
-              stroke="none"
-            />
-          </svg>
-          Desenvolvido por Agência Kactus
-        </a>
+        <!-- coluna do meio: endereço e CNPJ -->
+        <div class="f-col f-address">
+          <p class="f-label">Endereço</p>
+          <a
+            href="https://www.google.com/maps/search/?api=1&amp;query=Rua+Alvaro+de+Macedo+176+Parada+de+Lucas+Rio+de+Janeiro+RJ"
+            target="_blank"
+            rel="noopener"
+          >
+            Rua Álvaro de Macedo, 176, Loja A<br />
+            Parada de Lucas · Rio de Janeiro/RJ<br />
+            CEP 21250-620
+          </a>
+          <p class="f-cnpj">CNPJ 64.765.561/0001-64</p>
+        </div>
+        <!-- coluna da direita: contatos com ícones e crédito -->
+        <div class="f-col f-contact">
+          <p class="f-label">Contato</p>
+          <ul class="f-list">
+            <li>
+              <a href="#contato" data-whatsapp>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5a8.5 8.5 0 0 0-7.3 12.8L3.5 20.5l4.3-1.1A8.5 8.5 0 1 0 12 3.5Z" /><path d="M9 8.6c.2-.5.5-.5.8-.5h.5c.2 0 .4 0 .5.4l.7 1.6c.1.2 0 .4-.1.6l-.5.6c-.1.1-.2.3 0 .5.6 1 1.4 1.8 2.4 2.3.2.1.4.1.5-.1l.6-.7c.2-.2.4-.2.6-.1l1.5.7c.3.1.4.3.3.6-.1.8-.9 1.5-1.7 1.6-.8.1-1.9-.1-3.5-1.2-1.8-1.3-2.8-3-3-3.6-.2-.7-.1-1.4.4-2.1Z" /></svg>
+                (21) 97297-6658
+              </a>
+            </li>
+            <li>
+              <a href="tel:+5521995148834">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 3.5h2.6l1.4 4.2-2 1.4a11 11 0 0 0 6.3 6.3l1.4-2 4.2 1.4v2.6a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4.6 5.7a2 2 0 0 1 2-2.2Z" /></svg>
+                (21) 99514-8834
+              </a>
+            </li>
+            <li>
+              <a href="mailto:namarfiresystems@gmail.com">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5.5" width="17" height="13" rx="2.5" /><path d="m4.5 7 7.5 6 7.5-6" /></svg>
+                namarfiresystems@gmail.com
+              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/namarfire/" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.2" cy="6.8" r="0.6" fill="currentColor" stroke="none" /></svg>
+                @namarfire
+              </a>
+            </li>
+          </ul>
+          <a
+            class="credit"
+            href="https://www.instagram.com/paulolimeira.dev/"
+            target="_blank"
+            rel="noopener"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.2" cy="6.8" r="0.6" fill="currentColor" stroke="none" /></svg>
+            Desenvolvido por Agência Kactus
+          </a>
+        </div>
       </div>
     </footer>
 
@@ -646,6 +675,6 @@
       </svg>
     </a>
 
-    <script src="script.js?v=20261030d"></script>
+    <script src="script.js?v=20261103b"></script>
   </body>
 </html>
