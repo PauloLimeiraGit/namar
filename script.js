@@ -1,8 +1,7 @@
 // NAMAR Fire Systems — landing page
 
-// TROCAR: número de WhatsApp com DDI e DDD, só números (ex.: "5521999999999").
-// Enquanto estiver vazio, os botões de WhatsApp levam ao formulário.
-const WHATSAPP = "";
+// número de WhatsApp com DDI e DDD, só números
+const WHATSAPP = "5521972976658";
 
 const wa = (text) =>
   `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(text)}`;
